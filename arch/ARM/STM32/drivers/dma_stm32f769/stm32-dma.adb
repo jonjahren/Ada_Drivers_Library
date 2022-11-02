@@ -758,7 +758,7 @@ package body STM32.DMA is
       Stream : DMA_Stream_Selector;
       Config : DMA_Stream_Configuration)
    is
-      --  see HAL_DMA_Init in STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h
+      --  see HAL_DMA_Init in STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
       This_Stream : DMA_Stream renames Get_Stream (This, Stream);
    begin
       --  the STMicro Reference Manual RM0090, Doc Id 018909 Rev 6, pg 319 says

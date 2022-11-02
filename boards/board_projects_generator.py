@@ -83,7 +83,7 @@ def gen_project(board_name, rts):
 
 if __name__ == "__main__":
     for b in BOARDS:
-        print("\n=== %s ===" % b)
+        print("/n=== %s ===" % b)
         for rts in BOARDS[b]['rts_profiles']:
-            print("\n=== %s" % rts)
+            print("/n=== %s" % rts)
             gen_project(b, rts)

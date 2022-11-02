@@ -44,7 +44,7 @@ package body MicroBit.IOs is
    --  - Analog OUT allowed only on the 6 (exposed) analog IN pins while Nordic documentation says you can use any pin.
    --    This implementation is wrong, only analog IN should be resticted and devices like ADC need to know the exact AIN pin for correct behavior.
    --  - PWM channels of the PWM peripheral is 12, while Timer 3, 4 both have 5 channels, and Timer 0,1,2 have 3 channels for a total of 31 PWM channels. Largest implementation I have found on the Noric forums is 18 channels
-   --  - Timer + PPI based implementation. Most timers have 4, but some have 6 channels meaning 5 duty cycles channels and 1 period channel\
+   --  - Timer + PPI based implementation. Most timers have 4, but some have 6 channels meaning 5 duty cycles channels and 1 period channel/
    --  - Alternative is a pwm peripheral implementation which is fully hardware based needing no interrupts.
    --  - Fix to have more PWM channels (eg. a cars needs 4 PWM) is use another timer. Since this is such a common case we should implement a timer with 6 channels
    --  - 250 KHz timer frequency is used probably to save energy. For a PWM signal with period 20.000 us or 50 Hz,

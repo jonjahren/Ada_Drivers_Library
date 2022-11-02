@@ -18,7 +18,7 @@
 # Processors" by Joseph Yiu, 3rd edition, pp 262-263 for further details.
 
 define hookpost-load
-echo Resetting the processor and peripherals...\n
+echo Resetting the processor and peripherals.../n
 set *0xE000ED0C := 0x05FA0004
-echo Reset complete\n
+echo Reset complete/n
 end

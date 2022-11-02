@@ -54,12 +54,12 @@ class SOC(object):
         deps = list(set(deps))
 
         for d in deps:
-            out += "with %s; use %s;\n" % (d, d)
+            out += "with %s; use %s;/n" % (d, d)
 
-        out += "\npackage %s.Device is\n\n" % self._root_package
+        out += "/npackage %s.Device is/n/n" % self._root_package
         for p in self._periphs:
             out += p.generate_device_spec()
-        out += "end %s.Device;\n" % self._root_package
+        out += "end %s.Device;/n" % self._root_package
         return out
 
     def write_device_spec(self, source_dir):
@@ -86,15 +86,15 @@ class SiFiveGPIO_0(SiFive):
         self.add_dependency("SiFive.GPIO")
 
     def generate_device_spec(self):
-        out = "   -- GPIO%s --\n\n" % self._port_id
-        out += "   GPIO%s : aliased GPIO_Controller (%d);\n\n" \
+        out = "   -- GPIO%s --/n/n" % self._port_id
+        out += "   GPIO%s : aliased GPIO_Controller (%d);/n/n" /
                % (self._port_id, self._base_addr)
 
         for X in range(self._pin_nbr):
-            out += "   P%s : aliased GPIO_Point (GPIO%s'Access, %d);\n" \
+            out += "   P%s : aliased GPIO_Point (GPIO%s'Access, %d);/n" /
                    % (self._port_id + str(X), self._port_id, X)
 
-        return out + "\n"
+        return out + "/n"
 
 
 class SiFiveSPI_0(SiFive):
@@ -108,10 +108,10 @@ class SiFiveSPI_0(SiFive):
         self.add_dependency("SiFive.SPI")
 
     def generate_device_spec(self):
-        out = "   -- QSPI%s --\n\n" % self._port_id
-        out += "   QSPI%s : aliased SPI_Controller (%d);\n" \
+        out = "   -- QSPI%s --/n/n" % self._port_id
+        out += "   QSPI%s : aliased SPI_Controller (%d);/n" /
                % (self._port_id, self._base_addr)
-        return out + "\n"
+        return out + "/n"
 
 
 class SiFivePWM_0(SiFive):
@@ -126,12 +126,12 @@ class SiFivePWM_0(SiFive):
         self.add_dependency("System")
 
     def generate_device_spec(self):
-        out = "   -- PWM%s --\n\n" % self._port_id
-        out += "   PWM%s_Internal : aliased SiFive.PWM.Internal_PWM\n" % self._port_id
-        out += "      with Import, Address => System'To_Address (%d);\n" % (self._base_addr)
-        out += "   PWM%s : aliased SiFive.PWM.PWM_Device (PWM%s_Internal'Access);\n"\
+        out = "   -- PWM%s --/n/n" % self._port_id
+        out += "   PWM%s_Internal : aliased SiFive.PWM.Internal_PWM/n" % self._port_id
+        out += "      with Import, Address => System'To_Address (%d);/n" % (self._base_addr)
+        out += "   PWM%s : aliased SiFive.PWM.PWM_Device (PWM%s_Internal'Access);/n"/
                % (self._port_id, self._port_id)
-        return out + "\n"
+        return out + "/n"
 
 
 class SiFiveUART_0(SiFive):
@@ -146,7 +146,7 @@ class SiFiveUART_0(SiFive):
         self.add_dependency("System")
 
     def generate_device_spec(self):
-        out = "   -- UART%s --\n\n" % self._port_id
-        out += "   UART%s : aliased SiFive.UART.UART_Device (%d);\n" \
+        out = "   -- UART%s --/n/n" % self._port_id
+        out += "   UART%s : aliased SiFive.UART.UART_Device (%d);/n" /
                % (self._port_id, self._base_addr)
-        return out + "\n"
+        return out + "/n"

@@ -35,7 +35,7 @@ def gprbuild(project_file, debug=False):
     print(stdout)
 
     if returncode:
-        print('Build error (gprbuild returned {}):\n{}'.format(
+        print('Build error (gprbuild returned {}):/n{}'.format(
             returncode, stderr
         ))
 

@@ -3,7 +3,7 @@
         /*********/
          .section .data.argv
 argv_str:
-        .ascii  "main\0"
+        .ascii  "main/0"
 
         .align 4
 argv:

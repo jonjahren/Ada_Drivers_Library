@@ -44,7 +44,7 @@ def git_clone(repo_url, branch, dst, recursive=False):
     print(stdout)
 
     if returncode:
-        print('git clone error (returned {}):\n{}'.format(
+        print('git clone error (returned {}):/n{}'.format(
             returncode, stderr
         ))
         return returncode
@@ -56,7 +56,7 @@ def git_clone(repo_url, branch, dst, recursive=False):
         print(stdout)
 
         if returncode:
-            print('git branch checkout error (returned {}):\n{}'.format(
+            print('git branch checkout error (returned {}):/n{}'.format(
                 returncode, stderr
                 ))
     return returncode
@@ -112,8 +112,8 @@ def main(args):
             print(stdout)
 
             if ret:
-                print('Dependency install command error' +\
-                      ' (returned {}):\n{}'.format(ret, stderr))
+                print('Dependency install command error' +/
+                      ' (returned {}):/n{}'.format(ret, stderr))
                 sys.exit(1)
 
 if __name__ == '__main__':

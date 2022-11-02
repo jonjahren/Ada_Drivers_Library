@@ -38,4 +38,4 @@ direction. Hence the two LEDs will blink on and off when the program is
 functioning as intended.
 
 Based on a demonstration provided by ST Micro:
-C:\STM32Cube_FW_F4_V1.6.0\Projects\STM324x9I_EVAL\Examples\TIM\TIM_Encoder
+C:/STM32Cube_FW_F4_V1.6.0/Projects/STM324x9I_EVAL/Examples/TIM/TIM_Encoder

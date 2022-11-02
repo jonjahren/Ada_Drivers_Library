@@ -76,7 +76,7 @@ procedure Demo_CRC is
    --  the checksum obtained by calling a routine that uses DMA to transfer the
    --  memory block to the CRC processor
 
-   --  see the STM32Cube_FW_F4_V1.6.0\Projects\ CRC example for data and
+   --  see the STM32Cube_FW_F4_V1.6.0/Projects/ CRC example for data and
    --  expected CRC checksum value
 
    Section1 : constant Block_32 :=

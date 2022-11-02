@@ -61,24 +61,24 @@ class Testcase:
             '-P', self.project_file,
         )
         if returncode:
-            return 'Build error (gprbuild returned {}):\n{}'.format(
+            return 'Build error (gprbuild returned {}):/n{}'.format(
                 returncode, stderr
             )
 
         if len(self.drivers) == 0:
-            return "No testcase to execute...\n"
+            return "No testcase to execute.../n"
 
         # Run individual testcases
         errors = []
         for program, expected_output_fn in self.drivers:
             error = self._run_single(args, program, expected_output_fn)
             if error:
-                errors.append('{}:\n{}\n'.format(
+                errors.append('{}:/n{}/n'.format(
                     os.path.basename(program),
                     error
                 ))
 
-        return '\n'.join(errors) if errors else None
+        return '/n'.join(errors) if errors else None
 
     def _run_single(self, args, program, expected_output_fn):
         """
@@ -96,8 +96,8 @@ class Testcase:
 
         returncode, stdout, stderr = run_program(*argv)
 
-        program_returned_msg = \
-            'Program returned {}:\n{}'.format(returncode, stderr)
+        program_returned_msg = /
+            'Program returned {}:/n{}'.format(returncode, stderr)
 
         if returncode or stderr:
             return program_returned_msg
@@ -108,7 +108,7 @@ class Testcase:
 
         # Compare the actual output and the expected one
         if expected_output != stdout:
-            return 'Output mismatch:\n{}'.format('\n'.join(
+            return 'Output mismatch:/n{}'.format('/n'.join(
                 difflib.unified_diff(
                     expected_output,
                     stdout,
@@ -117,7 +117,7 @@ class Testcase:
                 )
             ))
         elif args.verbose:
-            print("\n".join(stdout))
+            print("/n".join(stdout))
 
 
 def find_testcases():
@@ -158,9 +158,9 @@ def main(args):
         error = tc.run(args)
         if error:
             at_least_one_error = True
-            print('\x1b[31mFAIL\x1b[0m {}:\n{}'.format(tc.name, error))
+            print('/x1b[31mFAIL/x1b[0m {}:/n{}'.format(tc.name, error))
         else:
-            print('\x1b[32mOK\x1b[0m   {}'.format(tc.name))
+            print('/x1b[32mOK/x1b[0m   {}'.format(tc.name))
     if at_least_one_error:
         sys.exit(1)
 

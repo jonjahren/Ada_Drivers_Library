@@ -1,4 +1,4 @@
-with "..\..\..\boards\MicroBit_v2\microbit_v2_zfp.gpr";
+with "../../../boards/MicroBit_v2/microbit_v2_zfp.gpr";
 
 project Bitbang_Pwm is
 

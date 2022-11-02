@@ -62,7 +62,7 @@
 --  is known to work on F4 Discovery and F429 Discovery boards.
 
 --  Based on a demonstration provided by ST Micro:
---  C:\STM32Cube_FW_F4_V1.6.0\Projects\STM324x9I_EVAL\Examples\TIM\TIM_Encoder
+--  C:/STM32Cube_FW_F4_V1.6.0/Projects/STM324x9I_EVAL/Examples/TIM/TIM_Encoder
 
 with Last_Chance_Handler;  pragma Unreferenced (Last_Chance_Handler);
 with Ada.Real_Time;        use Ada.Real_Time;

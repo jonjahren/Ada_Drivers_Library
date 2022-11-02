@@ -425,11 +425,11 @@ __vectors:
 
 .macro weak_handler name
 	.thumb_func
-.weak \name
-.type \name, %function
-\name:
+.weak /name
+.type /name, %function
+/name:
 0:	b 0b
-	.size \name, . - \name
+	.size /name, . - /name
 .endm
 
 weak_handler NMI_Handler
@@ -449,7 +449,7 @@ weak_handler __common_int_handler
         /*********/
         .section .data.argv
 argv_str:
-        .ascii  "main\0"
+        .ascii  "main/0"
 
         .align 4
 argv:
